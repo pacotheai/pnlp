@@ -1,0 +1,34 @@
+version: "2"
+services:
+    cassandra:
+      build: ./docker/cassandra/
+      image: paco/cassandra
+      ports:
+        - "7000:7000"
+        - "9042:9042"
+        - "7199:7199"
+      volumes:
+        - db-data:/var/lib/cassandra
+    mattermost:
+      build: ./docker/mattermost/
+      image: paco/mattermost
+      ports:
+        - "8065:8065"
+    development:
+      build: ./docker/code/
+      image: paco/code
+      ports:
+        - "5050:5050"
+      links:
+        - cassandra:cassandra
+        - mattermost:mattermost
+      volumes:
+        - $PWD:/home/user/ws/
+        - $HOME/.m2:/home/user/.m2
+        - $HOME/.gradle:/home/user/.gradle
+        - $HOME/.sdkman/bin:/home/user/.sdkman/bin
+        - $HOME/.sdkman/archives:/home/user/.sdkman/archives
+        - $HOME/.sdkman/candidates:/home/user/.sdkman/candidates
+        - $HOME/.grails:/home/user/.grails
+volumes:
+  db-data:

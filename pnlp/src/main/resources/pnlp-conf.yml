@@ -1,0 +1,12 @@
+version: 0.1.0
+
+model:
+  sentences: sentences/en-sent.bin
+  tokenizer: tokenizer/en-token.bin
+  namefinder:
+    person: namefinder/en-ner-person.bin
+    location: namefinder/en-ner-location.bin
+  sentiment:
+    location: sentiment/tweets.txt
+    cutoff: 2
+    iterations: 30

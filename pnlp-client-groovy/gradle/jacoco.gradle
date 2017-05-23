@@ -1,0 +1,25 @@
+apply plugin: 'jacoco'
+
+test {
+    jacoco {
+        includeNoLocationClasses = false
+    }
+}
+
+jacocoTestReport {
+    mustRunAfter 'check'
+    reports {
+        html {
+            enabled true
+        }
+    }
+    executionData = fileTree(dir: "$buildDir/jacoco")
+
+    //    afterEvaluate {
+    //        classDirectories = files(classDirectories.files.collect {
+    //            fileTree(dir: it,
+    //                     exclude: ['**/Name**',
+    //                               '**/Sentiment**'])
+    //        })
+    //    }
+}

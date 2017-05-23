@@ -1,0 +1,3 @@
+compileGroovy {
+  groovyOptions.configurationScript = file('src/conf/compiler.groovy')
+}

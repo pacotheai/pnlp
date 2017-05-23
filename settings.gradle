@@ -1,0 +1,4 @@
+include 'pnlp'
+include 'pnlp-client-groovy'
+
+rootProject.name = 'paco'
