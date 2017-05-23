@@ -1,13 +1,13 @@
 package paco.pnlp.namefinder
 
-import static ratpack.rx.RxRatpack.promise
 import static paco.pnlp.common.HandlerUtils.rasjson
+import static ratpack.rx.RxRatpack.promise
+
+import ratpack.handling.Context
+import ratpack.handling.Handler
+import rx.Observable
 
 import javax.inject.Inject
-import ratpack.handling.Handler
-import ratpack.handling.Context
-import ratpack.rx.RxRatpack
-import rx.Observable
 
 class PersonHandler implements Handler {
 

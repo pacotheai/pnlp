@@ -1,9 +1,9 @@
 package paco.pnlp.tokenizer
 
-import rx.Observable
-import javax.inject.Inject
 import opennlp.tools.tokenize.TokenizerME
 import opennlp.tools.tokenize.TokenizerModel
+
+import javax.inject.Inject
 
 /**
  * Functions to segment a string into its tokens

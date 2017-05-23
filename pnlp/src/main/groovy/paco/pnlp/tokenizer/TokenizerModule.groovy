@@ -1,10 +1,7 @@
 package paco.pnlp.tokenizer
 
-import com.google.inject.Scopes
-import com.google.inject.Provides
-import com.google.inject.Singleton
 import com.google.inject.AbstractModule
-
+import com.google.inject.Scopes
 import opennlp.tools.tokenize.TokenizerModel
 
 /**

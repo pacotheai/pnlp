@@ -5,17 +5,12 @@ buildscript {
   }
 
   dependencies {
-    classpath "net.saliman:gradle-cobertura-plugin:2.3.2"
     classpath 'com.bmuschko:gradle-clover-plugin:2.1.0'
   }
 }
 
-apply plugin: 'groovy'
-
 apply from: 'gradle/compiler.gradle'
 apply from: 'gradle/codenarc.gradle'
-apply from: 'gradle/cobertura.gradle'
-apply from: 'gradle/jacoco.gradle'
 apply from: 'gradle/clover.gradle'
 
 repositories {
@@ -29,4 +24,5 @@ dependencies {
 
   clover 'org.openclover:clover:4.2.0'
   testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+  testCompile 'junit:junit:4.12'
 }

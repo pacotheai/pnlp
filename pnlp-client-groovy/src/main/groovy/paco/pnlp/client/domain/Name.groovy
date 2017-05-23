@@ -1,13 +1,10 @@
-package paco.pnlp.client
-
-import groovy.transform.Canonical
+package paco.pnlp.client.domain
 
 /**
  * Represents a name found in a given text
  *
  * @since 0.1.0
  */
-@Canonical
 class Name {
 
   /**

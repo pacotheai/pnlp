@@ -6,7 +6,6 @@ import static paco.pnlp.common.HandlerUtils.rasjson
 import javax.inject.Inject
 import ratpack.handling.Handler
 import ratpack.handling.Context
-import ratpack.rx.RxRatpack
 import rx.Observable
 
 class LocationHandler implements Handler {

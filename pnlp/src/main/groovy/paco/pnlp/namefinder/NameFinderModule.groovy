@@ -1,8 +1,6 @@
 package paco.pnlp.namefinder
 
 import com.google.inject.Scopes
-import com.google.inject.Provides
-import com.google.inject.Singleton
 import com.google.inject.AbstractModule
 
 import paco.pnlp.namefinder.model.NameFinderModel

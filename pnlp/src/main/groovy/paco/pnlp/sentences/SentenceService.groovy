@@ -1,9 +1,9 @@
 package paco.pnlp.sentences
 
-import rx.Observable
-import javax.inject.Inject
-import opennlp.tools.sentdetect.SentenceModel
 import opennlp.tools.sentdetect.SentenceDetectorME
+import opennlp.tools.sentdetect.SentenceModel
+
+import javax.inject.Inject
 
 /**
  * Holds all functions dealing with sentence detection

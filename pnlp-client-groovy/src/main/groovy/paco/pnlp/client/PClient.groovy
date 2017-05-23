@@ -2,6 +2,8 @@ package paco.pnlp.client
 
 import groovy.transform.TupleConstructor
 import groovyx.net.http.HttpBuilder
+import paco.pnlp.client.domain.Name
+import paco.pnlp.client.domain.Sentiment
 
 /**
  * Client to access pnlp service endpoints

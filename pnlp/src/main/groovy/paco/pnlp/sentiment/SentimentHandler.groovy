@@ -2,11 +2,10 @@ package paco.pnlp.sentiment
 
 import static ratpack.jackson.Jackson.json
 
-import javax.inject.Inject
-import ratpack.handling.Handler
 import ratpack.handling.Context
-import ratpack.rx.RxRatpack
-import rx.Observable
+import ratpack.handling.Handler
+
+import javax.inject.Inject
 
 class SentimentHandler implements Handler {
 

@@ -3,48 +3,35 @@ buildscript {
     jcenter()
     mavenCentral()
   }
+
   dependencies {
     classpath 'io.ratpack:ratpack-gradle:1.4.4'
     classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    classpath 'com.bmuschko:gradle-clover-plugin:2.1.0'
   }
 }
 
-apply plugin: 'groovy'
-apply plugin: 'codenarc'
 apply plugin: 'io.ratpack.ratpack-groovy'
 apply plugin: 'com.github.johnrengelman.shadow'
 
+apply from: 'gradle/compiler.gradle'
+apply from: 'gradle/codenarc.gradle'
+apply from: 'gradle/clover.gradle'
+
 repositories {
-  mavenLocal()
   jcenter()
-  maven {
-    url  "http://dl.bintray.com/grooviter/maven"
-  }
-}
-repositories {
-    jcenter()
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
   compile ratpack.dependency('guice')
   compile ratpack.dependency('rx')
-  compile ratpack.dependency('hikari')
 
   compile 'org.codehaus.groovy:groovy-all:2.5.0-alpha-1:indy'
   compile 'org.apache.opennlp:opennlp-tools:1.8.0'
   compile 'ch.qos.logback:logback-classic:1.2.3'
 
+  clover 'org.openclover:clover:4.2.0'
   testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
   testCompile 'junit:junit:4.12'
-}
-
-compileGroovy {
-  groovyOptions.configurationScript = file('src/conf/compiler.groovy')
-}
-
-codenarc {
-  configFile = new File(projectDir, 'src/conf/codenarc.groovy')
-  ignoreFailures = true
-  reportFormat = 'html'
 }

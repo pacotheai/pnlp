@@ -1,20 +1,14 @@
 package paco.pnlp.namefinder
 
-import paco.pnlp.sentences.SentenceService
-import paco.pnlp.tokenizer.TokenizerService
-import paco.pnlp.namefinder.model.NameFinderModel
-
-import rx.functions.Func1
-import javax.inject.Inject
-import java.util.stream.Stream
-import groovy.transform.TupleConstructor
-import org.codehaus.groovy.runtime.DefaultGroovyMethods
-
-import opennlp.tools.util.Span
 import opennlp.tools.namefind.NameFinderME
 import opennlp.tools.namefind.TokenNameFinderModel
+import opennlp.tools.util.Span
+import paco.pnlp.namefinder.model.NameFinderModel
+import paco.pnlp.sentences.SentenceService
+import paco.pnlp.tokenizer.TokenizerService
 
-import groovy.transform.stc.*
+import javax.inject.Inject
+
 /**
  * Service to search names
  *
@@ -70,12 +64,12 @@ class NameFinderService {
       name: name,
       probability: span.prob,
       start: nameStartsAt,
-      end: nameEndsAt
+      end: nameEndsAt,
     ]
   }
 
   private TokenNameFinderModel findModelByType(String type) {
-    switch(type) {
+    switch (type) {
       case 'person':    return nameFinderModel.personModel
       case 'location':  return nameFinderModel.locationModel
 

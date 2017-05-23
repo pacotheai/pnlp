@@ -1,8 +1,8 @@
 package paco.pnlp.init
 
 import ratpack.rx.RxRatpack
-import ratpack.server.Service
-import ratpack.server.StartEvent
+import ratpack.service.Service
+import ratpack.service.StartEvent
 
 class StartupService implements Service {
   @Override

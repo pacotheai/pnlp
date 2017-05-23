@@ -1,14 +1,11 @@
 package paco.pnlp.sentiment
 
+import groovy.util.logging.Slf4j
 import opennlp.tools.doccat.DoccatModel
 import opennlp.tools.doccat.DocumentCategorizerME
-import opennlp.tools.doccat.DocumentSampleStream
-import opennlp.tools.util.ObjectStream
-import opennlp.tools.util.PlainTextByLineStream
-import javax.inject.Inject
-
-import groovy.util.logging.Slf4j
 import paco.pnlp.tokenizer.TokenizerService
+
+import javax.inject.Inject
 
 /**
  * Service responsible to apply sentiment analysis to text
@@ -52,19 +49,19 @@ class SentimentService {
    */
   Map isPositive(String text) {
     DocumentCategorizerME categorizer = new DocumentCategorizerME(model)
-		double[] outcomes = categorizer.categorize(tokenizer.tokenize(text))
-		String category = categorizer.getBestCategory(outcomes)
+    double[] outcomes = categorizer.categorize(tokenizer.tokenize(text))
+    String category = categorizer.getBestCategory(outcomes)
 
     log.debug "outcomes for \"$text\": $outcomes"
 
     return [
       result: getResult(category),
-      outcomes: outcomes
+      outcomes: outcomes,
     ]
   }
 
   Boolean getResult(String category) {
-    switch(category) {
+    switch (category) {
       case "1": return true
       case "0": return false
 

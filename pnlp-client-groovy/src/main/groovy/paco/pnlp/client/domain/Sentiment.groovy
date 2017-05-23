@@ -1,6 +1,4 @@
-package paco.pnlp.client
-
-import groovy.transform.Canonical
+package paco.pnlp.client.domain
 
 /**
  * Represents the evaluation of a simple positive/negative sentiment
@@ -8,7 +6,6 @@ import groovy.transform.Canonical
  *
  * @since 0.1.0
  */
-@Canonical
 class Sentiment {
 
   /**
