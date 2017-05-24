@@ -1,1 +1,0 @@
-FROM mattermost/mattermost-preview

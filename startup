@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Running docker-compose to open the development console. It will
-# start a tmux session. Because `docker-compose run` doesn't allow
-# ports defined in docker-compose.yml to be expose for the image
-# referenced (`development`), that's why we're exposing them in the command
-# line.
-docker-compose run -p 5050 development && docker-compose stop
