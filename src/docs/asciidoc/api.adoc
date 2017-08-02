@@ -1,0 +1,30 @@
+== Rest API
+
+The Rest API has been documented using
+https://projects.spring.io/spring-restdocs/[Restdocs], meaning is
+generated once all API tests have been passed. That ensures that the
+API documentation is **accurate** and **up-to-date**.
+
+=== /api/v1/sentences/me
+
+This endpoint returns a list of sentences found in the text passed as
+parameter.
+
+==== Request
+
+The call should carry a json with a field called "text" containing
+the sentences we want to extract.
+
+.curl
+include::{apiSnippets}/sentences-200/curl-request.adoc[]
+
+.http
+include::{apiSnippets}/sentences-200/http-request.adoc[]
+
+==== 200
+
+If everything went ok the response should return a list of sentences
+found in the text.
+
+.response
+include::{apiSnippets}/sentences-200/http-response.adoc[]
