@@ -5,18 +5,20 @@ buildscript {
   }
 
   dependencies {
-    classpath 'io.ratpack:ratpack-gradle:1.4.4'
-    classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
-    classpath 'com.bmuschko:gradle-clover-plugin:2.1.0'
+    classpath "io.ratpack:ratpack-gradle:$ratpack_gradle"
+    classpath "com.github.jengelman.gradle.plugins:shadow:$shadow"
+    classpath "com.bmuschko:gradle-docker-plugin:$gradle_docker"
+    classpath "com.bmuschko:gradle-clover-plugin:$gradle_clover"
   }
 }
 
-apply plugin: 'io.ratpack.ratpack-groovy'
-apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: "io.ratpack.ratpack-groovy"
+apply plugin: "com.github.johnrengelman.shadow"
 
-apply from: 'gradle/compiler.gradle'
-apply from: 'gradle/codenarc.gradle'
-apply from: 'gradle/clover.gradle'
+apply from: "gradle/compiler.gradle"
+apply from: "gradle/codenarc.gradle"
+apply from: "gradle/clover.gradle"
+apply from: "gradle/docker.gradle"
 
 repositories {
   jcenter()
@@ -24,14 +26,14 @@ repositories {
 }
 
 dependencies {
-  compile ratpack.dependency('guice')
-  compile ratpack.dependency('rx')
+  compile ratpack.dependency("guice")
+  compile ratpack.dependency("rx")
 
-  compile 'org.codehaus.groovy:groovy-all:2.5.0-alpha-1:indy'
-  compile 'org.apache.opennlp:opennlp-tools:1.8.0'
-  compile 'ch.qos.logback:logback-classic:1.2.3'
+  compile "org.codehaus.groovy:groovy-all:$groovy_all"
+  compile "org.apache.opennlp:opennlp-tools:$opennlp_tools"
+  compile "ch.qos.logback:logback-classic:$logback_classic"
 
-  clover 'org.openclover:clover:4.2.0'
-  testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-  testCompile 'junit:junit:4.12'
+  clover "org.openclover:clover:$clover"
+  testCompile "org.spockframework:spock-core:$spock_core"
+  testCompile "junit:junit:$junit"
 }
