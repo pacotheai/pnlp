@@ -14,7 +14,7 @@ sourceSets {
 groovydoc {
   link 'https://docs.oracle.com/javase/8/docs/api/', 'java'
   link 'http://docs.groovy-lang.org/latest/html/api/', 'groovy', 'org.codehaus.groovy'
-  link 'http://pacotheai.github.io/securatta/javadocs', 'pnlp'
+  link 'http://pacotheai.github.io/pnlp/javadocs', 'pnlp'
 
   classpath = sourceSets.groovydoc.output + classpath
   overviewText = project.resources.text.fromFile('src/docs/groovydoc/overview.html')
@@ -35,7 +35,7 @@ asciidoctor {
              'icons'               :  'font',
              'toclevels'           :  3,
              'snippets'            : snippetsDir,
-             'releaseVersion'      : version
+             'releaseVersion'      : project.properties.version
 }
 
 /**

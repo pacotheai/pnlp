@@ -13,3 +13,5 @@
 include::intro.adoc[]
 
 include::api.adoc[]
+
+include::development.adoc[]

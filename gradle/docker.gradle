@@ -1,8 +1,13 @@
 apply plugin: "com.bmuschko.docker-java-application"
 
 docker {
+  registryCredentials {
+    url = "pacotheai-docker-public.bintray.io"
+    username = project.properties.bintray_user
+    password = project.properties.bintray_key
+  }
   javaApplication {
-    tag = "pacotheai/pnlp"
+    tag = "pacotheai-docker-public.bintray.io/pnlp:$version"
     baseImage = 'openjdk:8-alpine'
     ports = [5050]
   }
